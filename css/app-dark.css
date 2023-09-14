@@ -1,0 +1,33 @@
+:root {
+    --main: #FF7F27;
+    --secondary: #83593b;
+    --lite: #2d1c11;
+    --white: #212121;
+    --black: #f1f1f1;
+    --border-grey: #292929;
+    --dark: #dc6617;
+    --card-color: #3a3a3a;
+    --text-dark: #f1f1f1;
+    --grey-back: #2b2b2b;
+    --grey-text: #a1a1a1;
+    --alert: #ff5555;
+    --light-grey: #5c5c5c;
+    --very-light-grey: #595959;
+    --ok-green: #1bd41b;
+    --footer-back: #2b2b2b;
+    --ok-green-dark: #0aa60a;
+    --grad3: #141e2f;
+    --card-back: #3a3a3a;
+    --ans-wrong: #804141;
+    --mask: #59595973;
+    --tutorial-active: #363636;
+    --tutorial-h-t: #b9b9b9;
+    --tutorial-th: #282828;
+    --tutorial-tr: #363636;
+    --tutorial-p-t: #aaaaaa;
+    --tutorial-not-f: #2b231a;
+    --tutorial-lr: #2d2d2d;
+}
+.card_image img{
+    filter: brightness(0.7) !important;
+}

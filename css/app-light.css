@@ -1,0 +1,30 @@
+:root {
+    --main: #FF7F27;
+    --secondary: #fdb17a;
+    --lite: #fbe7d9;
+    --white: #ffffff;
+    --black: #000;
+    --border-grey: #f1f1f1;
+    --dark: #dc6617;
+    --card-color: #ffe5d2;
+    --text-dark: #d15400;
+    --grey-back: #fcfcfc;
+    --grey-text: #7a7a7a;
+    --alert: rgb(255 38 38);
+    --light-grey: #939393;
+    --very-light-grey: #cccccc;
+    --ok-green: #1bd41b;
+    --footer-back: #fcfcfc;
+    --ok-green-dark: #0aa60a;
+    --grad3: #dbe9ff;
+    --card-back: #eeeff3;
+    --ans-wrong: #ffb9b9;
+    --mask: #00000073;
+    --tutorial-active: #ffffff;
+    --tutorial-h-t: #333;
+    --tutorial-th: #f2f2f2;
+    --tutorial-tr: #f2f2f2;
+    --tutorial-p-t: #555;
+    --tutorial-not-f: #FFF3E6;
+    --tutorial-lr: #f2f2f2;
+}
