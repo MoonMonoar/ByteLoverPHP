@@ -131,7 +131,7 @@ $db = $dbconfig->getDB();
                 </button>
                 </a>
 
-                <a href="#" onclick="comingSoon()">
+                <a href="/forum/?ref=home_button">
                     <button class="b">
                         <?php echo $strings["code_forum"][$lang];?>
                         <sup>
