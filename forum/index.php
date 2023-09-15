@@ -109,7 +109,7 @@ $courses = new Courses();
         </div>
     </div>
 </header>
-<section id="main_body">
+<section id="main_body" class="filler">
 
 
 
