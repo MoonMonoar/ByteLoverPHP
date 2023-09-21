@@ -65,17 +65,10 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--main);
 }
+
 .filler {
     min-height: 60vh;
 }
-
-
-
-
-
-
-
-
 
 
 
