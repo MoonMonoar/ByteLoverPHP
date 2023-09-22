@@ -27,6 +27,8 @@
     --tutorial-p-t: #aaaaaa;
     --tutorial-not-f: #2b231a;
     --tutorial-lr: #2d2d2d;
+    --background-off: #272727;
+    --btn-back: #3c3d3f
 }
 .card_image img{
     filter: brightness(0.7) !important;

@@ -15,20 +15,22 @@ class CardMaker
 
         $html = '<a target="_blank" href="'.self::getUrl($tutorial_id, $article_id).'">';
         $html.='<div class="card_welcome">
-                  <div class="t-info-g">
-                    <div>
-                      <div class="title b">'.$strings["learn_solo"][$lang].'
-                        <sup>
-                            <span class="badge badge-success">
-                                '.$strings["free"][$lang].'
-                            </span>
-                        </sup>: '.self::getTitleFromAtricleId($article_id).'
+                <div class="card_holder">
+                      <div class="t-info-g">
+                        <div>
+                          <div class="title b">'.$strings["learn_solo"][$lang].'
+                            <sup>
+                                <span class="badge badge-success">
+                                    '.$strings["free"][$lang].'
+                                </span>
+                            </sup>: '.self::getTitleFromAtricleId($article_id).'
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  '.self::getBanner($tutorial_id).'
-                  <div>
-                    '.$body.'
+                      '.self::getBanner($tutorial_id).'
+                      <div>
+                        '.$body.'
+                      </div>
                   </div>
                 </div>';
 

@@ -23,22 +23,31 @@ $courses = new Courses();
     </title>
     <?php
     echo $templates->headMeta();
+    ?>
+    <link rel="stylesheet" href="/css/icons/fontawesome-6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="/plugins/izi/css/iziToast.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <?php
     if($global_key_theme == "dark"){
-        echo '<link rel="stylesheet" href="/css/app-dark.css?v='.$script_version.'">
-              <meta name="theme-color" content="#212121">
-              <meta name="msapplication-TileColor" content="#212121">';
+        ?>
+        <link rel="stylesheet" href="/css/app-dark.css?v=<?php echo $script_version?>">
+        <meta name="theme-color" content="#212121">
+        <meta name="msapplication-TileColor" content="#212121">
+        <?php
     }
     else {
-        echo '<link rel="stylesheet" href="/css/app-light.css?v='.$script_version.'">
-              <meta name="theme-color" content="#ffffff">
-              <meta name="msapplication-TileColor" content="#ffffff">';
+        ?>
+        <link rel="stylesheet" href="/css/app-light.css?v=<?php echo $script_version;?>">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <?php
     }
     ?>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/app.css?v=<?php echo $script_version;?>">
     <link rel="stylesheet" href="/css/icons/fontawesome-6.3.0/css/all.min.css">
 </head>
-<body>
+<body class="forum-base">
 <header>
     <div class="pad header_divs">
         <div>
@@ -109,19 +118,84 @@ $courses = new Courses();
         </div>
     </div>
 </header>
-<section id="main_body" class="filler">
+<section id="main_body" class="dash filler">
 
+    <div class="menu">
+        <ul>
+            <li>
+                <div class="card active">
+                    <div class="cflex">
+                        <i class="fa fa-house"></i>
+                    </div>
+                    <div class="t def"> Home </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="cflex">
+                        <i class="fa fa-bug"></i>
+                    </div>
+                    <div class="t def"> Problems </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="cflex">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <div class="t def"> Contributions </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="cflex">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="t def"> Profile </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="cflex">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <div class="t def"> Community </div>
+                </div>
+            </li>
+        </ul>
+        <div class="lmob">
+            <a href="/dashboard/teacher/?ref=auto&amp;lang=bn">বাংলা</a>
+            <a class="ml10c" href="/courses/?ref=home_header">Courses</a>
+        </div>
+        <div class="lmob mt5">Moon Monoar</div>
+    </div>
+    <div class="nav-scroller bg-body shadow-sm omob">
+        <ul class="nav">
+            <li class="nav-link active"><i class="fa fa-house"></i> Home</li>
+            <li class="nav-link" href="#">
+                <i class="fa fa-user"></i> Problems
+                <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
+            </li>
+            <li class="nav-link"><i class="fa-solid fa-handshake-angle"></i> Contributions</li>
+            <li class="nav-link"><i class="fa fa-user"></i> Profile</li>
+            <li class="nav-link"><i class="fa-solid fa-user-group"></i> Community</li>
+        </ul>
+    </div>
 
+    <div id="forum-root">
 
-
+    </div>
 
 </section>
 <?php echo $templates->footerHtml();?>
 <script src="/js/jquery.min.js?v=1"></script>
-<script src="/js/min/app.js?v=<?php echo $script_version;?>"></script>
-<script src="/js/min/forum.js?v=<?php echo $script_version;?>"></script>
 <script src="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-<script src="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="/plugins/izi/js/iziToast.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+<script src="/js/min/index.js?v=<?php echo $script_version;?>"></script>
+<script src="/js/min/forum.js?v=<?php echo $script_version;?>"></script>
+<script src="/js/min/app.js?v=<?php echo $script_version;?>"></script>
 </body>
 </html>
 <?php

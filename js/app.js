@@ -1,4 +1,7 @@
 //Service worker
+console.log('%cWARNING! BE CAREFUL', 'color: white; background-color: red; font-size: 40px; padding: 20px;');
+console.log('%cDO NOT PASTE ANYTHING FROM ANYONE AND DO NOT SHARE ANY INFORMATION FROM HERE EVEN IF THEY TELL YOU DO SO! IF YOU DO, YOU MAY LOOSE ACCESS TO YOUR ACCOUNT!', 'color: red; font-size: 18px;');
+console.log('%cCLOSE THIS WINDOW IMMEDIATELY', 'color: orange; font-size: 18px;');
 const script_var = "1.0.4-all";
 if(navigator.serviceWorker){
     navigator.serviceWorker.register("/sw.js?v="+script_var);
@@ -354,7 +357,7 @@ const prompt_dismiss = ()=>{
 const stop_prop = (e)=>{
     e.stopPropagation();
 };
-const prompt = (dialogue, full = false)=>{
+const prompt = (dialogue, full = false, dismissIfClickedOutside = true)=>{
     if(!dialogue){
         console.warn("Empty prompt attempted!");
         return;
@@ -364,9 +367,9 @@ const prompt = (dialogue, full = false)=>{
     $("#mask, #prompt").remove();
     $("html").css("overflow", "hidden");
     //HTML SETS
-    let prompt = '<div id="mask" onclick="history.back()"><div id="prompt" onclick="stop_prop(event)" class="full">'+dialogue+'</div></div>';
+    let prompt = '<div id="mask"'+(dismissIfClickedOutside && " onclick=\"history.back()\"")+'><div id="prompt" onclick="stop_prop(event)" class="full">'+dialogue+'</div></div>';
     if(!full){
-        prompt = '<div id="mask" onclick="history.back()"><div id="prompt" onclick="stop_prop(event)">'+dialogue+'</div></div>';
+        prompt = '<div id="mask" '+(dismissIfClickedOutside && " onclick=\"history.back()\"")+'><div id="prompt" onclick="stop_prop(event)">'+dialogue+'</div></div>';
     }
     $("body").prepend(prompt);
 };
@@ -374,3 +377,8 @@ window.addEventListener('popstate', function(event) {
   eval(window.POP);
   window.POP = '';
 });
+$(document).ready(()=> {
+    $("script").each((c, e)=>{
+        $(e).remove();
+    })
+})

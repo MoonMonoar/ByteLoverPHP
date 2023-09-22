@@ -24,19 +24,26 @@ $db = $dbconfig->getDB();
         <?php
         echo $templates->headMeta();
         if($global_key_theme == "dark"){
-        echo '<link rel="stylesheet" href="/css/app-dark.css?v='.$script_version.'">
-              <meta name="theme-color" content="#212121">
-              <meta name="msapplication-TileColor" content="#212121">';
+        ?>
+            <link rel="stylesheet" href="/css/app-dark.css?v='.$script_version.'">
+            <meta name="theme-color" content="#212121">
+            <meta name="msapplication-TileColor" content="#212121">
+
+            <?php
         }
         else {
-        echo '<link rel="stylesheet" href="/css/app-light.css?v='.$script_version.'">
-              <meta name="theme-color" content="#ffffff">
-              <meta name="msapplication-TileColor" content="#ffffff">';
+        ?>
+            <link rel="stylesheet" href="/css/app-light.css?v='.$script_version.'">
+            <meta name="theme-color" content="#ffffff">
+            <meta name="msapplication-TileColor" content="#ffffff">
+
+            <?php
         }
         ?>
-        <link rel="stylesheet" href="/css/app.css?v=<?php echo $script_version;?>">
         <link rel="stylesheet" href="/css/icons/fontawesome-6.3.0/css/all.min.css">
         <link rel="stylesheet" href="/plugins/izi/css/iziToast.min.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/app.css?v=<?php echo $script_version;?>">
     </head>
     <body>
         <header>
@@ -157,6 +164,7 @@ $db = $dbconfig->getDB();
 
             <div class="w_card_holder">
             <div class="card_welcome">
+                <div class="card_holder">
                 <div class="title b"><?php echo $strings["free_course"][$lang];?></div>
                 <div class="title sub">
                     <?php echo $strings["free_course_info"][$lang];?>
@@ -164,60 +172,64 @@ $db = $dbconfig->getDB();
                 <div class="yt-body">
                     <iframe class="yt-pl" src="https://www.youtube.com/embed/videoseries?list=PLNUoztsuEzh70G7bkOz2IhRNYXoxJPtnU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
+                </div>
             </div>
 
             <div class="card_welcome">
-                <div class="title b"><?php echo $strings["moon_title"][$lang];?></div>
-                <div class="title sub">
-                    <?php echo $strings["moon_sub"][$lang];?>
-                </div>
-                <div class="body">
-                    <div class="au">
+                <div class="card_holder">
+                    <div class="title b"><?php echo $strings["moon_title"][$lang];?></div>
+                    <div class="title sub">
+                        <?php echo $strings["moon_sub"][$lang];?>
+                    </div>
+                    <div class="body">
+                        <div class="au">
+                            <div>
+                                <img src="/img/Moon.jpg" alt="Moon">
+                            </div>
+                            <div class="des">
+                                <ul>
+                                    <li>
+                                        <?php echo $strings["moon_bsc"][$lang];?>
+                                    </li>
+                                    <li>
+                                        <?php echo $strings["moon_js"][$lang];?>
+                                    </li>
+                                    <li>
+                                        <?php echo $strings["moon_php"][$lang];?>
+                                    </li>
+                                    <li>
+                                        <?php echo $strings["moon_java"][$lang];?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lset">
                         <div>
-                            <img src="/img/Moon.jpg" alt="Moon">
+                            <a href="tel:+8801317215403">
+                                    <button class="ub cflex tb cbc">
+                                        <i class="fa fa-phone"></i> <span><?php echo $strings["call_now"][$lang];?></span>
+                                    </button>
+                            </a>
                         </div>
-                        <div class="des">
-                            <ul>
-                                <li>
-                                    <?php echo $strings["moon_bsc"][$lang];?>
-                                </li>
-                                <li>
-                                    <?php echo $strings["moon_js"][$lang];?>
-                                </li>
-                                <li>
-                                    <?php echo $strings["moon_php"][$lang];?>
-                                </li>
-                                <li>
-                                    <?php echo $strings["moon_java"][$lang];?>
-                                </li>
-                            </ul>
+                        <div>
+                            <a target="_blank" href="https://www.facebook.com/immo2n/">
+                                    <button class="ub cflex tb cbc">
+                                        <i class="fa fa-brands fa-facebook"></i> <span><?php echo $strings["facebook"][$lang];?></span>
+                                    </button>
+                            </a>
+                        </div>
+                        <div>
+                            <a target="_blank" href="https://moonmonoar.github.io/portfolio/">
+                                    <button class="ub cflex tb cbc">
+                                        <i class="fa fa-globe"></i> <span><?php echo $strings["website"][$lang];?></span>
+                                    </button>
+                            </a>
                         </div>
                     </div>
-                    <div class="lset">
-                    <div>
-                        <a href="tel:+8801317215403">
-                                <button class="ub cflex tb cbc">
-                                    <i class="fa fa-phone"></i> <span><?php echo $strings["call_now"][$lang];?></span>
-                                </button>
-                        </a>
                     </div>
-                    <div>
-                        <a target="_blank" href="https://www.facebook.com/immo2n/">
-                                <button class="ub cflex tb cbc">
-                                    <i class="fa fa-brands fa-facebook"></i> <span><?php echo $strings["facebook"][$lang];?></span>
-                                </button>
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://moonmonoar.github.io/portfolio/">
-                                <button class="ub cflex tb cbc">
-                                    <i class="fa fa-globe"></i> <span><?php echo $strings["website"][$lang];?></span>
-                                </button>
-                        </a>
-                    </div>
-                </div>
                 </div>
             </div>
+
             </div>
 
             <div class="w_card_holder" id="feed">
@@ -275,9 +287,11 @@ $db = $dbconfig->getDB();
         </section>
         <?php echo $templates->footerHtml();?>
         <script src="/js/jquery.min.js?v=1"></script>
+        <script src="//cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
         <script src="/plugins/izi/js/iziToast.min.js"></script>
-        <script src="/js/min/app.js?v=<?php echo $script_version;?>"></script>
         <script src="/js/min/index.js?v=<?php echo $script_version;?>"></script>
+        <script src="/js/min/app.js?v=<?php echo $script_version;?>"></script>
     </body>
 </html>
 <?php

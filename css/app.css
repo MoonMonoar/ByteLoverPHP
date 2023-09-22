@@ -57,26 +57,29 @@
     height: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--lite);
+    background: var(--secondary);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--secondary);
+    background: var(--dark);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--main);
+}
+
+a {
+    text-decoration: none !important;
+    color: var(--main) !important;
 }
 
 .filler {
     min-height: 60vh;
 }
 
-
-
-
-
-
 .mln20 {
     margin-left: -20px;
+}
+.ml5 {
+    margin-left: 5px;
 }
 .crs-t {
     display: grid;
@@ -220,6 +223,21 @@
     transform-origin: center center;
     animation: pa 1.5ms forwards;
 }
+.hide {
+    display: none !important;
+}
+.forum-base #prompt {
+    width: calc(100% - 45px) !important;
+    background-image: linear-gradient(140deg, var(--lite) 0%, var(--footer-back) 50%, var(--grad3) 75%);
+}
+.new_problem {
+    width: 100vw;
+    max-width: 800px;
+}
+.prob_draft {
+    color: var(--ok-green);
+    font-size: small;
+}
 #prompt.hide {
     transform: scale(1.05);
 }
@@ -269,7 +287,7 @@
     font-size: small;
 }
 .tod {
-    height: 50px;
+    /* height: 50px; */
     background: var(--card-color);
     font-size: 1.15em;
     padding: 10px;
@@ -394,7 +412,7 @@ body {
     width: 100%;
     font-family: 'Ubuntu', serif;
     user-select: none;
-    background-image: linear-gradient(140deg, var(--lite) 0%, var(--white) 50%, var(--grad3) 75%);
+    background-image: linear-gradient(140deg, var(--lite) 0%, var(--footer-back) 50%, var(--grad3) 75%);
     font-size: 14px;
 }
 button, a {
@@ -510,7 +528,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 10;
     background-color: var(--white);
     color: var(--black);
     height: 80px;
@@ -671,6 +689,12 @@ label {
     border: 1px solid var(--text-dark);
     max-width: fit-content;
 }
+.card_holder {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
 .card_welcome .title, #card_welcome .title {
     text-align: left;
     font-size: 19px;
@@ -755,7 +779,7 @@ label {
 .pdo {
     text-align: center;
 }
-#dash_body .loading {
+#dash_body .loading, #forum-root .loading {
     height: 100%;
     width: 100%;
     display: flex;
@@ -927,9 +951,9 @@ label {
     max-width: 122px;
 }
 .au {
-    margin: 20px 0 10px 0;
     display: grid;
     grid-template-columns: 200px calc(100% - 200px);
+    margin-bottom: 20px;
 }
 .au img {
     height: auto;
@@ -1016,6 +1040,23 @@ header button span {
 }
 .mr5 {
     margin-right: 5px;
+}
+#editor {
+    width: 80vw;
+    min-height: 400px;
+}
+.editorOptions select {
+    padding: 10px;
+    text-overflow: ellipsis;
+    background: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    border: none;
+    font-size: 0.8em;
+    width: calc(100% - 10px);
+}
+.mr2 {
+    margin-right: 2px;
 }
 .mle12 {
     margin-left: 12px;
@@ -1290,6 +1331,9 @@ hr {
 .ml10 {
     margin-left: 10px;
 }
+.ml15 {
+    margin-left: 15px !important;
+}
 .ml10all {
     margin-left: 10px;
 }
@@ -1324,10 +1368,15 @@ hr {
     flex-direction: column;
     align-items: center;
 }
+.fob a {
+    color: var(--grey-text) !important;
+}
 .fob ul {
     list-style-type: none;
     color: var(--white);
     padding-left: 5px;
+    margin-bottom: 0px !important;
+    margin-top: 15px !important;
 }
 .fob ul li {
     margin-bottom: 15px;
@@ -1699,7 +1748,181 @@ code {
     margin-bottom: 0px;
     margin-top: 35px;
 }
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    background: var(--border-grey);
+}
+
+.nav-scroller .nav {
+    color: rgba(255, 255, 255, .75);
+}
+
+.nav-scroller .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+    color: var(--text-grey);
+    background: var(--background-off);
+    cursor: pointer;
+}
+.esetm {
+    margin-right: 10px;
+    font-size: 10px;
+    color: var(--grey-text) !important;
+}
+.nav-link i {
+    margin-right: 5px;
+}
+
+.nav-scroller .nav-link:hover {
+    color: var(--dark);
+}
+
+.nav-scroller .active {
+    color: var(--white) !important;
+    font-weight: bold;
+}
+.btn:hover {
+    color: var(--black) !important;
+    background-color: var(--btn-back) !important;
+}
+.psb, .apb {
+    font-weight: bold;
+    border: none;
+    background: var(--main);
+    color: var(--white);
+    padding-left: 25px;
+    padding-right: 25px;
+}
+#forum-root {
+    padding: 22px;
+}
+
+.add_problem {
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+.single {
+    display: block !important;
+}
+.add_problem .optionList {
+    padding: 0 0 10px 0;
+}
+.add_problem .problem_body {
+    width: calc(100% - 35px);
+    min-height: 250px;
+    font-family: 'Ubuntu';
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background: var(--white);
+    color: var(--black);
+}
+.prob_mes {
+    padding: 0 0 10px 0;
+    color: var(--black);
+    font-size: 1.15em;
+}
+.ptitEdit, .editor input {
+    height: 45px;
+    padding: 10px;
+    font-size: 1.1em;
+    font-family: 'Ubuntu';
+    width: calc(100% - 35px);
+    border-radius: 5px;
+    border: none;
+    background: var(--white);
+    color: var(--black);
+}
+.editor input {
+    width: unset !important;
+    margin-bottom: 10px;
+}
+.runl a {
+    color: var(--black) !important;
+    font-size: 0.8em;
+    padding: 15px;
+}
+.runl li {
+    margin-top: 5px;
+}
+.cic {
+    font-size: 1.5em;
+    color: var(--black);
+}
+.new_prb_t {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+.ceog {
+    display: grid;
+    grid-template-columns: calc(100% - 40px) 40px;
+}
+.pao {
+    padding: 5px 10px 5px 10px;
+    font-size: 1.02em;
+    border-radius: 5px;
+}
+.cmt2 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.actb {
+    cursor: pointer;
+}
+.ceom {
+    display: inline-block;
+    color: var(--black);
+    padding-left: 10px;
+    position: unset;
+}
+.dropdown-menu {
+    background: var(--white) !important;
+    color: var(--black) !important;
+}
+.editorOptions {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
 @media screen and (max-width: 900px){
+    #editor {
+        width: 85vw;
+    }
+    .ptitEdit, .problem_body {
+        width: 100% !important;
+    }
+    .add_problem {
+        margin-top: 10px !important;
+    }
+    .psb {
+        width: 100%;
+    }
+    #forum-root {
+        padding: 10px;
+    }
+    .load-margin {
+        margin-top: calc(50% - 2.75rem);
+    }
     .load-icon {
         margin-bottom:  25px !important;
     }
@@ -1861,7 +2084,7 @@ code {
         margin-top: 30px !important;
     }
     #hero_line {
-        font-size: 25px;
+        font-size: 20px;
         margin-top: 25px;
     }
     .top_links a {
