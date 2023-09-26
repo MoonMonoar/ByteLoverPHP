@@ -45,8 +45,8 @@ $courses = new Courses();
     }
     ?>
     <link rel="stylesheet" href="/css/app.css?v=<?php echo $script_version;?>">
-    <link rel="stylesheet" href="/plugins/editor/src/tagsinput.css">
     <link rel="stylesheet" href="/css/icons/fontawesome-6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="/plugins/tags/main.css">
 </head>
 
 <body class="forum-base">
@@ -153,14 +153,34 @@ $courses = new Courses();
                     <textarea onpaste="openCoder(event)" onkeyup="draft()" id="problemContent" class="problem_body"
                         placeholder="Explain the problem and insert code if necessary"></textarea>
                 </div>
+
                 <div class="area mt5">
                     <div class="prob_mes">
-                        Add tags
+                        Add files (Photos only)
                     </div>
-                    <label for="problemTags"></label>
-                    <input type="text" value="#ByteLoverForum" data-role="tagsinput" class="ptitEdit" maxlength="80"
-                        id="problemTags" />
+
+                    <div class="horizontalScrollbar" id="prob-imgs"></div>
+
+                    <div class="mb-3">
+                        <label for="prob-file" class="form-label"></label>
+                        <input accept="image/*" class="form-control pfw" type="file" id="prob-file">
+                    </div>
+                    
                 </div>
+
+                <div class="area mt5">
+                    <div class="prob_mes">
+                        Add tags (e.g C, C++, Java)
+                    </div>
+                    <div id="tags"></div>
+                </div>
+
+                <div class="area mt5 cflex pf-sb">
+                    <button class="btn btn-primary apb pao fsb fnsb">
+                        Submit
+                    </button>
+                </div>
+
             </div>
         </div>
 
@@ -168,19 +188,26 @@ $courses = new Courses();
         <div class="ceog">
             <div>
                 <div class="horizontalScrollbar editorOptions">
+
+                        <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Ctrl+I" class="ceom mr5 actb" id="insertCode">
+                            <i class="fa fa-check mr5"></i>Insert
+                        </div>
+
+                        <div class="ceom mr5">
+                            &middot
+                        </div>
                     
-                        <div class="dropdown ceom">
-                            <div class="ceom actb" data-bs-toggle="dropdown" aria-expanded="false"> File </div>
+                        <div class="dropdown ceom nopad">
+                            <div class="ceom actb dt" data-bs-toggle="dropdown" aria-expanded="false"> File </div>
 
                                 <ul class="dropdown-menu">
-                                    <li>Hi</li>
-                                    <li>Hi</li>
+                                    <li id="editor_down" class="emlib actb"><i class="fa-solid fa-download mr5"></i> Download <span class="hint_text ml5">Ctrl+S</span></li>
                                 </ul>
                         </div>
                     
                         <div class="dropdown ceom">
 
-                            <div class="ceom actb" data-bs-toggle="dropdown" aria-expanded="false"> View </div>
+                            <div class="ceom actb dt" data-bs-toggle="dropdown" aria-expanded="false"> View </div>
 
                                 <ul class="dropdown-menu">
                                     <li>
@@ -443,7 +470,7 @@ $courses = new Courses();
                         </div>
 
                         <div class="dropdown ceom mr5">
-                            <div class="ceom actb" data-bs-toggle="dropdown" aria-expanded="false"> Run </div>
+                            <div class="ceom actb dt" data-bs-toggle="dropdown" aria-expanded="false"> Run </div>
 
                                 <ul class="dropdown-menu runl">
                                     <li>
@@ -472,10 +499,9 @@ $courses = new Courses();
                                     </li>
                                 </ul>
                         </div>
-                    
 
-                        <div class="ceom mr5 actb ml15" id="insertCode">
-                            <i class="fa fa-check mr5"></i>Insert
+                        <div class="ceom ml10 actb" id="lang-name" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="To switch, View &#12297;Editor language">
+                            <i class="fa-solid fa-code mr5"></i> Text
                         </div>
                     
                 </div>
@@ -495,9 +521,10 @@ $courses = new Courses();
     <script src="//cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="/plugins/izi/js/iziToast.min.js"></script>
-    <script src="/plugins/editor/src/tagsinput.js"></script>
+    <script src="/plugins/tags/main.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
     <script src="/js/min/index.js?v=<?php echo $script_version;?>"></script>
+    <script src="/plugins/nudity/nude.min.js"></script>
     <script src="/js/min/forumAdd.js?v=<?php echo $script_version;?>"></script>
     <script src="/js/min/app.js?v=<?php echo $script_version;?>"></script>
 </body>

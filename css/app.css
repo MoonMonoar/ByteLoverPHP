@@ -71,6 +71,14 @@ a {
     color: var(--main) !important;
 }
 
+.p-h-w {
+    width: calc(100% - 5px);
+}
+.p-h-p {
+    overflow: hidden;
+    margin-right: 5px;
+}
+
 .filler {
     min-height: 60vh;
 }
@@ -372,6 +380,16 @@ a {
 }
 .qs {
     margin-top: 15px;
+}
+.hint_text {
+    font-size: small;
+    color: var(--grey-text);
+}
+.emlib {
+    padding: 0 10px 0 10px;
+}
+.nopad {
+    padding: 0 !important;
 }
 .no_class {
     display: flex;
@@ -1321,6 +1339,11 @@ hr {
     height: 80px;
     width: auto;
 }
+.tooltip {
+    z-index: 99999;
+    --bs-tooltip-bg: var(--white);
+    --bs-tooltip-color: var(--black);
+}
 .flk {
     margin-left: 7px;
     color: var(--grey-text);
@@ -1340,6 +1363,9 @@ hr {
 .mr10all {
     margin-right: 10px;
 }
+.pfw {
+    width: calc(100% - 35px) !important;
+}
 .pins {
     margin-top: 5px;
 }
@@ -1347,6 +1373,10 @@ hr {
     margin-top: 15px;
     font-size: 17px;
     color: var(--main);
+}
+.form-control {
+    background: var(--white);
+    color: var(--black);
 }
 .total {
     color: var(--ok-green);
@@ -1514,6 +1544,26 @@ hr {
 
 .c-table tr:nth-child(even) {
     background-color: var(--tutorial-tr);
+}
+
+#prob-imgs {
+    margin: 0 0 10px 0;
+}
+
+#prob-imgs:empty {
+    display:none;
+}
+
+#prob-imgs img {
+    height: 120px;
+    width: auto;
+    padding: 5px;
+}
+
+#prob-imgs img:hover {
+    opacity: 0.5;
+    background: var(--alert);
+    cursor: pointer;
 }
 
 .horizontalScrollbar {
@@ -1775,7 +1825,7 @@ code {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: .875rem;
-    color: var(--text-grey);
+    color: var(--main);
     background: var(--background-off);
     cursor: pointer;
 }
@@ -1808,8 +1858,18 @@ code {
     padding-left: 25px;
     padding-right: 25px;
 }
+.psb {
+    width: 100%;
+}
+.info_card {
+    background: var(--main);
+    padding: 10px;
+    margin-top: 10px;
+    color: var(--white);
+    border-radius: 5px;
+}
 #forum-root {
-    padding: 22px;
+    padding: 0 15px 0 15px;
 }
 
 .add_problem {
@@ -1829,6 +1889,7 @@ code {
     min-height: 250px;
     font-family: 'Ubuntu';
     padding: 10px;
+    margin: 10px 0 5px 0;
     font-size: 1.1em;
     border-radius: 5px;
     background: var(--white);
@@ -1838,6 +1899,9 @@ code {
     padding: 0 0 10px 0;
     color: var(--black);
     font-size: 1.15em;
+}
+.pf-sb {
+    width: calc(100% - 35px);
 }
 .ptitEdit, .editor input {
     height: 45px;
@@ -1895,6 +1959,29 @@ code {
     padding-left: 10px;
     position: unset;
 }
+.f_home {
+    display: grid;
+    grid-template-columns: calc(100% - 250px) 250px;
+}
+.f_home_body {
+    padding-top: 20px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.f_home_sidebar {
+    margin-top: 20px;
+}
+.rci {
+    margin-top: -3px;
+    height: 15px;
+}
+.sub_hint {
+    font-size: small;
+}
+.f_home_body::-webkit-scrollbar {
+    width: 0px;
+}
 .dropdown-menu {
     background: var(--white) !important;
     color: var(--black) !important;
@@ -1904,21 +1991,47 @@ code {
     align-items: center;
     height: 40px;
 }
+.fsb {
+    margin-top: 15px;
+    width: 150px;
+    height: 45px;
+}
+.tsm {
+    font-size: small;
+}
+.pos-fix-nav {
+    position: fixed;
+    overflow: hidden;
+    overflow-x: auto;
+    width: 100vw;
+}
 @media screen and (max-width: 900px){
+    .p-h-w {
+        width: 100% !important;
+    }
+    .p-h-p {
+        overflow: auto !important;
+        margin-right: 0px !important;
+    }
+    .f_home_body {
+        overflow: hidden;
+    }
+    .f_home {
+        display: flex !important;
+        flex-flow: column-reverse;
+    }
     #editor {
         width: 85vw;
     }
-    .ptitEdit, .problem_body {
+    .ptitEdit, .problem_body, .pfw, #tags, .pf-sb {
         width: 100% !important;
     }
     .add_problem {
         margin-top: 10px !important;
     }
-    .psb {
-        width: 100%;
-    }
     #forum-root {
         padding: 10px;
+        margin-top: 2.75rem;
     }
     .load-margin {
         margin-top: calc(50% - 2.75rem);

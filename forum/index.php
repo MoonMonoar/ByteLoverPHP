@@ -8,8 +8,8 @@ require_once '../php/langset.php';
 require_once '../php/templates.php';
 require_once '../php/autologin.php';
 global $lang ,$strings, $global_key_theme,
-       $script_version, $alter_lang_link,
-       $alter_lang_name;
+$script_version, $alter_lang_link,
+$alter_lang_name;
 $templates = new Templates();
 $security = new Security();
 $links = new Links();
@@ -169,7 +169,7 @@ $courses = new Courses();
         </div>
         <div class="lmob mt5">Moon Monoar</div>
     </div>
-    <div class="nav-scroller bg-body shadow-sm omob">
+    <div class="nav-scroller bg-body shadow-sm omob pos-fix-nav">
         <ul class="nav">
             <li class="nav-link active"><i class="fa fa-house"></i> Home</li>
             <li class="nav-link" href="#">
